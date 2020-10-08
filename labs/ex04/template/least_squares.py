@@ -11,4 +11,4 @@ def least_squares(y, tx):
     """calculate the least squares solution."""
     gram = np.linalg.inv(tx.transpose() @ tx)
     weight = gram @ tx.transpose() @ y
-    return weight, rmse(y,tx,weight)
+    return weight
