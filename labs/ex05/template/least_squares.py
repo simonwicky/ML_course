@@ -8,10 +8,7 @@ import numpy as np
 
 
 def least_squares(y, tx):
-    """calculate the least squares."""
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # least squares: TODO
-    # returns mse, and optimal weights
-    # ***************************************************
-    raise NotImplementedError
+    """calculate the least squares solution."""
+    gram = np.linalg.inv(tx.transpose() @ tx)
+    weight = gram @ tx.transpose() @ y
+    return weight
