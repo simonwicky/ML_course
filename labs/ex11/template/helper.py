@@ -35,12 +35,14 @@ def load_image(path):
 
 def build_distance_matrix(data, mu):
     """build a distance matrix.
-
-    row of the matrix represents the data point,
-    column of the matrix represents the k-th cluster.
+    return
+        distance matrix:
+            row of the matrix represents the data point,
+            column of the matrix represents the k-th cluster.
     """
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: build distance matrix
-    # ***************************************************
-    raise NotImplementedError
+    distance = np.zeros((data.shape[0],mu.shape[0]))
+    for i in range(data.shape[0]):
+        for j in range(mu.shape[0]):
+            distance[i,j] = ((data[i] - mu[j])**2).sum()
+    
+    return distance

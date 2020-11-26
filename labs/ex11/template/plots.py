@@ -20,7 +20,7 @@ def plot_cluster(data, mu, colors, ax):
     assignments = np.argmin(distance_matrix, axis=1)
     #
     for k_th in range(mu.shape[0]):
-        rows, cols = np.where(assignments == k_th)
+        rows, cols= np.where(assignments[:,np.newaxis] == k_th)
         data_of_kth_cluster = data[rows, :]
         ax.scatter(
             data_of_kth_cluster[:, 0],
